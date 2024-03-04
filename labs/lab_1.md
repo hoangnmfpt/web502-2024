@@ -1,5 +1,9 @@
 # 1: Cài đặt thành công typescipt và ts-node
 
+```
+npm i -g typescript ts-node ts-lib @types/node
+```
+
 - tsc -v
 - ts-node -v
 - tsc file.ts
