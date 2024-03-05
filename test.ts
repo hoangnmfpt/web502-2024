@@ -1,11 +1,21 @@
+type user = {
+  name: string;
+  age: number;
+  address: string;
+  job: string;
+  zalo: string;
+  gender: string;
+  major: string;
+};
+
 {
   //! block dành cho myInfor
-  const myInfor = {
+  const myInfor: user = {
     name: "Nguyễn Minh Hoàng",
     age: 32,
     address: "Bắc Giang",
-    Job: "Teacher",
-    gender: "male",
+    job: "Teacher",
+    gender: "lgbt",
     zalo: "https://zalo.me/g/lthxnv127",
     major: "Javascript, Python, Ruby",
   };
@@ -13,7 +23,15 @@
 }
 //! block này dành riêng cho myTeachers
 {
-  const myTeachers = ["Hoà", "Huy", "Tú", "Hoàng", "Thắng", "Đạt", "Ngọc"];
+  const myTeachers: string[] = [
+    "Hoà",
+    "Huy",
+    "Tú",
+    "Hoàng",
+    "Thắng",
+    "Đạt",
+    "Ngọc",
+  ];
   myTeachers.forEach((teacher, index) => {
     console.log(`[${index + 1}] ${teacher}`);
   });
@@ -22,7 +40,8 @@
 // myTeachers.toUpperCase();
 
 // const myTeachers =0
-function a() {
-  const myString = "Hom nay troi dep qua!";
+{
+  const myString: string = "Hom nay troi dep qua!";
 }
+
 // myString.map((item) => {});
