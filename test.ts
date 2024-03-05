@@ -19,6 +19,19 @@ type user = {
     zalo: "https://zalo.me/g/lthxnv127",
     major: "Javascript, Python, Ruby",
   };
+
+  const student1: user = {
+    name: "Dang",
+    age: 20,
+    address: "Hà Nội",
+    job: "Student",
+    gender: "male",
+    zalo: "123456789",
+    major: "Frontend",
+
+    //Type '{ name: string; age: number; }' is missing the following properties from type 'user': address, job, zalo, gender, major
+    //! loại '{name: chuỗi;Tuổi: số;} 'thiếu các thuộc tính sau từ loại' người dùng ': địa chỉ, công việc, zalo, giới tính, chính
+  };
   console.log(myInfor);
 }
 //! block này dành riêng cho myTeachers
