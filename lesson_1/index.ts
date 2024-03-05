@@ -1,6 +1,35 @@
-const myStudents = ["Hoang", "Hue", "Hoa", "Chinh"];
+const teachers: string[] = [
+  "Tú",
+  "Thắng",
+  "Đạt",
+  "Hoàng",
+  "Huy",
+  "Hoà",
+  "Ngọc",
+];
 
-const myName = "Nguyễn Minh Hoàng";
+const myString: string = "Hom nay troi dep qua!";
+console.log(myString.toLowerCase());
+console.log(myString.toLocaleUpperCase());
 
-console.log(myStudents);
-console.log(myName);
+type user = {
+  name: string;
+  age: number;
+  jobs: string[];
+  company: string;
+  isMarried: boolean;
+  gender: string;
+  hobbies: string[];
+  address: string;
+};
+
+const myInfor: user = {
+  name: "Nguyễn Minh Hoàng",
+  age: 32,
+  address: "Bắc Giang",
+  jobs: ["developer", "teacher", "grab dirver"],
+  company: "FPT Software",
+  isMarried: true,
+  gender: "lgbt+",
+  hobbies: ["reading", "music", "movie", "game"],
+};
