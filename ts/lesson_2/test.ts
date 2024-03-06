@@ -28,11 +28,6 @@
     ],
   };
   console.log(myCV);
-
-  const portfolio = {
-    name: "Nguoi di go phim",
-    bio: "Code không khó, code chạy được mới khó!",
-  };
 }
 
 console.log("Hello!");

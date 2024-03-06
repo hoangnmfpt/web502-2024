@@ -1,21 +1,6 @@
-// ! "Type" là 1 cách khai báo kiểu dữ liệu trong typescript
-// ? Các kiểu dữ liệu cores của typescript: number, string, boolean, object, array
-// ? Các kiểu dữ liệu mixins, refers
+"use strict";
 {
-    var myString = "Hom nay troi dep the!";
-    var myAge = 17;
-    var isTeacher = true;
-    var mySkills = ["HTML", "CSS", "Javascript", "ReactJS", "NodeJS"]; // array type
-    var mySkills2 = [
-        "HTML",
-        "CSS",
-        "Javascript",
-        "ReactJS",
-        "NodeJS",
-    ]; //  generic type
-}
-{
-    var myCV = {
+    const myCV = {
         fullName: "Nguyen Minh Hoang",
         address: "Bắc Giang city",
         age: 32,
@@ -43,4 +28,6 @@
             },
         ],
     };
+    console.log(myCV);
 }
+console.log("Hello!");

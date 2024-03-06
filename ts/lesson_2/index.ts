@@ -39,7 +39,7 @@
     skills: string[];
     projects: projectType[];
   };
-  const myCV = {
+  const myCV: cvType = {
     fullName: "Nguyen Minh Hoang",
     address: "Bắc Giang city",
     age: 32,
