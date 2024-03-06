@@ -12,11 +12,11 @@ const myInfor = {
   isMarried: true,
 };
 
-const a = 10;
+console.log(myInfor);
 
-const b = 20;
+// const a = 10;
 
-const sum = (x, y) => x + y;
-console.log(sum(a, b));
+// const b = 20;
 
-myInfor;
+// const sum = (x, y) => x + y;
+// console.log(sum(a, b));
