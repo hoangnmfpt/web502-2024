@@ -1,36 +1,36 @@
 // Referent type
 
 type projectType = {
-  id: number;
-  name: string;
-  techStack: string[];
-  summary: string;
-};
+  id: number
+  name: string
+  techStack: string[]
+  summary: string
+}
 
 type cetificateType = {
-  id: number;
-  name: string;
-  major: string;
-  graduatedYear: number;
-};
+  id: number
+  name: string
+  major: string
+  graduatedYear: number
+}
 
 type portfolioType = {
-  fullName: string;
-  birthDay: string;
-  address: string;
-  jobs: Array<string>;
-  company: string;
-  isMarried: boolean;
-  projects: projectType[];
-  cetificate?: cetificateType[];
-};
+  fullName: string
+  birthDay: string
+  address: string
+  jobs: Array<string>
+  company: string
+  isMarried: boolean
+  projects: projectType[]
+  cetificate?: cetificateType[]
+}
 
 const projectOne: projectType = {
   id: 1,
   name: "E-commerce website",
   techStack: ["HTML", "CSS", "JS", "React", "NodeJS", "MongoDB"],
   summary: "Build a website to sell products online",
-};
+}
 
 const myPortfolio: portfolioType = {
   fullName: "Nguyen Minh Hoang",
@@ -62,7 +62,7 @@ const myPortfolio: portfolioType = {
       graduatedYear: 2013,
     },
   ],
-};
+}
 
 const yourPortfolio: portfolioType = {
   fullName: "Nguyen Minh Hoang",
@@ -86,4 +86,4 @@ const yourPortfolio: portfolioType = {
       summary: "Build a website to ...",
     },
   ],
-};
+}
