@@ -28,9 +28,6 @@ type user = {
     gender: "male",
     zalo: "123456789",
     major: "Frontend",
-
-    //Type '{ name: string; age: number; }' is missing the following properties from type 'user': address, job, zalo, gender, major
-    //! loại '{name: chuỗi;Tuổi: số;} 'thiếu các thuộc tính sau từ loại' người dùng ': địa chỉ, công việc, zalo, giới tính, chính
   };
   console.log(myInfor);
 }

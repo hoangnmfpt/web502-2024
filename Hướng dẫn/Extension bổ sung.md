@@ -18,5 +18,6 @@ Prettier - Code formatter - format code
 ESLint - kiểm tra lỗi code
 vscode-icons - icon cho file
 Dracula Official - theme màu sắc
+Vscode Google Translate - Dịch từ
 
 - Một số extention cần cấu hình thêm mới có thể hoạt động.
