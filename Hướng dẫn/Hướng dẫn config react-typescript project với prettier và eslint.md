@@ -1,20 +1,20 @@
 ### Bước 0 - Cài đặt các extension cần thiết:
 
 ```
-Better Comments
-Bracket Pair Colorizer 2
-Javascript (ES6) code snippets
+Better Comments - Comment có màu sắc chú thích rõ ràng
+Bracket Pair Colorizer 2 - đổ màu cho các cặp ngoặc
+Javascript (ES6) code snippets - Snippets cho ES6
 ES7 React/Redux/GraphQL/React-Native snippets
-Auto Close Tag
-Auto Rename Tag
-Auto import
-Path Intellisense
-Import Cost
-Git Lens
-Git History
-Quokka.js
-Error Lens
-Console Ninja
+Auto Close Tag - tự tạo ra thẻ đóng
+Auto Rename Tag - tự sửa đổi tên thẻ
+Auto import  - tự import
+Path Intellisense - gợi ý khi import
+Import Cost - hiển thị dung lượng của thư viện khi import
+Git Lens - Hiển thị thông tin commit của file
+Git History - Hiển thị lịch sử commit
+Quokka.js - check kết quả và lỗi ngay khi gõ
+Error Lens  - Hiển thị lỗi ngay khi gõ
+Console Ninja - Hiển thị console.log ngay trong editor khi gọi api hoặc render app.
 Prettier - Code formatter
 ESLint
 vscode-icons
@@ -126,7 +126,6 @@ Mục đích là cấu hình các config đồng bộ các editor với nhau n�
 [*]
 indent_size = 2
 indent_style = space
-
 ```
 
 ### Bước 6 - Cấu hính alias cho tsconfig.json

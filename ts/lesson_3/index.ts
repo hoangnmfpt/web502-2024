@@ -12,8 +12,6 @@
     thumbnail: string;
     images?: string[];
   };
-
-  const products: productType[] = [];
   const product: productType = {
     id: 1,
     title: "iPhone 9",
@@ -33,12 +31,21 @@
     id: number;
     name: string;
     email: string;
-    gender: "male" | "female" | "other";
+    password: string;
+    gender?: "male" | "female" | "other";
+    relationshipStatus?: "single" | "married" | "divorced" | "complicated";
+    reaction?: "like" | "love" | "haha" | "wow" | "sad" | "angry";
+    status?: "active" | "inactive";
   };
   const user: userType = {
     id: 1,
     name: "Nguyễn Minh Hoàng",
     email: "hoangnm62@fpt.edu.vn",
+    password: "123456",
     gender: "male",
+    relationshipStatus: "single",
+    reaction: "like",
   };
+  console.log(user);
+  console.log();
 }
