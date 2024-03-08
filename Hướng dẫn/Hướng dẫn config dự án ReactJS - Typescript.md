@@ -126,7 +126,6 @@ Mục đích là cấu hình các config đồng bộ các editor với nhau n�
 [*]
 indent_size = 2
 indent_style = space
-
 ```
 
 ### Bước 6 - Cấu hính alias cho tsconfig.json
