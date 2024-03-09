@@ -1,3 +1,4 @@
+```
 Better Comments - đánh dấu các comment theo màu sắc
 Code Runner - chạy code ngay trong file
 Code Spell Checker - kiểm tra chính tả
@@ -18,5 +19,6 @@ Prettier - Code formatter - format code
 ESLint - kiểm tra lỗi code
 vscode-icons - icon cho file
 Dracula Official - theme màu sắc
+```
 
 - Một số extention cần cấu hình thêm mới có thể hoạt động.
