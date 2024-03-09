@@ -29,3 +29,6 @@ Path Intellisense - gợi ý khi import
 Prettier - Code formatter - format code
 vscode-icons - icon cho file
 ```
+
+1. Kiểm tra tsc -v : 5 điểm
+2. Kiểm tra ts-node -v : 5 điểm
