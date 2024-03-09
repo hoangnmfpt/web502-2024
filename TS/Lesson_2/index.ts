@@ -12,7 +12,8 @@ type productType = {
 
 const myMessage: string =
   "Hom nay troi dep qua, rat vui duoc noi chuyen voi ban!";
-
+// ! ":" anotation
+// ! ":" Chú thích
 const myAge: number = 30;
 
 const isMarried: boolean = false;
