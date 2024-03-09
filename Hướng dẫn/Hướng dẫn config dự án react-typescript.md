@@ -187,7 +187,6 @@ export default defineConfig({
     "prettier": "prettier --check \"src/**/(*.tsx|*.ts|*.css|*.scss)\"",
     "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\""
 }
-
 ```
 
 ### Câu lệnh để chạy dự án:
