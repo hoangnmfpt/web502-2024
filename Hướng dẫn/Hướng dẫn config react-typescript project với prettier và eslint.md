@@ -139,7 +139,6 @@ Thêm đoạn này vào compilerOptions trong file tsconfig.json
 "paths": {
   "~/*": ["src/*"]
 }
-
 ```
 
 Ý nghĩa của đoạn này là ta có thể import Login from '~/pages/Login' thay vì import Login from '../../pages/Login'. Ngắn gọn và dễ nhìn hơn nhiều!
