@@ -88,7 +88,7 @@ module.exports = {
 
 ### Bước 4 - Config Prettier để format code:
 
-Tạo file .prettierrc trong thư trong thư mục root với nội dung dưới đây
+Tạo file .prettierrc trong thư trong thư mục gốc với nội dung dưới đây
 
 ```
 {
@@ -132,7 +132,7 @@ indent_style = space
 
 Việc thêm alias vào file tsconfig.json sẽ giúp VS Code hiểu mà tự động import giúp chúng ta. Lưu ý cái này chỉ giúp
 
-Thêm đoạn này vào compilerOptions trong file tsconfig.json
+Thêm đoạn này vào object compilerOptions trong file tsconfig.json
 
 ```
 "baseUrl": ".",
