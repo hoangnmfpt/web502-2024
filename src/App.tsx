@@ -1,17 +1,30 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import ProductDetail from "./pages/ProductDetail";
+import Admin from "./pages/Admin";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Notfound from "./pages/Notfound";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <>
-      <h2>Hello cac ban!</h2>
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
+      <Router>
+        <div>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/admin" element={<Admin />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="*" element={<Notfound />} />
+          </Routes>
+          <Footer />
+        </div>
+      </Router>
     </>
   );
 }
