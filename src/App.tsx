@@ -6,13 +6,17 @@ import ProductDetail from "./pages/ProductDetail";
 import Admin from "./pages/Admin";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Notfound from "./pages/Notfound";
+import Notfound from "~/pages/Notfound";
+import { Container, ThemeProvider } from "react-bootstrap";
 
 function App() {
   return (
     <>
       <Router>
-        <div>
+        <ThemeProvider
+          breakpoints={["xxxl", "xxl", "xl", "lg", "md", "sm", "xs", "xxs"]}
+          minBreakpoint="xxs"
+        >
           <Header />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -23,7 +27,7 @@ function App() {
             <Route path="*" element={<Notfound />} />
           </Routes>
           <Footer />
-        </div>
+        </ThemeProvider>
       </Router>
     </>
   );

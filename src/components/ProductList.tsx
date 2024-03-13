@@ -1,28 +1,37 @@
-// src/components/Product.tsx
-import React from "react";
-import { Card } from "react-bootstrap";
+// src/components/ProductList.tsx
+import React, { useState, useEffect } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import Product from "./Product";
+import instance from "~/apis";
 
-interface ProductProps {
-  product: {
-    id: number;
-    title: string;
-    price: number;
-    description: string;
-    thumbnail: string;
-  };
-}
+const ProductList: React.FC = () => {
+  const [products, setProducts] = useState([]);
 
-const Product: React.FC<ProductProps> = ({ product }) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await instance.get("/products");
+        setProducts(data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
-    <Card style={{ width: "18rem" }}>
-      <Card.Img variant="top" src={product.thumbnail} />
-      <Card.Body>
-        <Card.Title>{product.title}</Card.Title>
-        <Card.Text>{product.description}</Card.Text>
-        <Card.Text>Price: ${product.price}</Card.Text>
-      </Card.Body>
-    </Card>
+    <Container>
+      <h2>Product List</h2>
+      <Row>
+        {products.map((product: any) => (
+          <Col key={product.id}>
+            <Product product={product} />
+          </Col>
+        ))}
+      </Row>
+    </Container>
   );
 };
 
-export default Product;
+export default ProductList;
