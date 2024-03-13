@@ -3,14 +3,19 @@ import './App.css'
 import Home from './pages/Home'
 
 function App() {
-  // return React.createElement('div', { className: 'app' }, React.createElement('h1', {}, 'Hello, World!'))
+  console.log(typeof React.createElement('div', { className: 'app' }, React.createElement('h1', {}, 'Hello, World!')))
 
+  const addProduct = () => {
+    console.log('Them thanh cong!')
+  }
   return (
-    <div className='app'>
-      <h1>Hello, World!</h1>
-      <button>Click Me</button>
+    <>
+      {/* <div className='app'>
+        <h1>Hello, World!</h1>
+        <button onClick={() => addProduct()}>Click Me</button>
+      </div> */}
       <Home />
-    </div>
+    </>
   )
 }
 
