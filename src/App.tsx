@@ -7,11 +7,13 @@ import Home from "./pages/Home";
 function App() {
   return (
     <>
-      <Header />
-      {/* banner */}
-      {/* Danh sach san pham */}
-      <Home />
-      <Footer />
+      <div className="app">
+        <Header />
+        {/* banner */}
+        {/* Danh sach san pham */}
+        <Home />
+        <Footer />
+      </div>
     </>
   );
 
