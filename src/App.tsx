@@ -11,30 +11,10 @@ import instance from './apis'
 
 // ! App là dumb component
 const App = () => {
-  const [product, setProduct] = useState<Product>({
-    title: 'Gia tri khoi tao mac dinh',
-    price: 0,
-    description: ''
-  })
-
-  useEffect(() => {
-    // fetch('http://localhost:3000/products/1')
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(product)
-    //     setProduct(data)
-    //   })
-    ;(async () => {
-      const { data } = await instance.get('/products/1')
-      console.log(data)
-      setProduct(data)
-    })()
-  }, [])
-
   return (
     <>
       <Header />
-      <Home product={product} />
+      <Home />
       {/* Home la UI component */}
       <Footer />
     </>
