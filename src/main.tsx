@@ -5,7 +5,8 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    // ! strict mode //!chế độ nghiêm ngặt
     <App />
   </React.StrictMode>
 )
+
+// ! strict mode //!chế độ nghiêm ngặt
