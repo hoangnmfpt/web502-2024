@@ -2,16 +2,19 @@ import "./App.css";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import Banner from "./components/Banner";
 
-function App() {
+type Props = {};
+
+const App = (props: Props) => {
   return (
     <>
       <Header />
+      <Banner />
       <Home />
       <Footer />
     </>
-    // ! Attribute
   );
-}
+};
 
 export default App;

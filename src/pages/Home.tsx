@@ -1,12 +1,13 @@
-import React from "react";
 import ProductList from "~/components/ProductList";
 
-const Home = () => {
+type Props = {};
+
+const Home = (props: Props) => {
   return (
-    <div>
+    <>
       <h1>San pham ban chay</h1>
       <ProductList />
-    </div>
+    </>
   );
 };
 

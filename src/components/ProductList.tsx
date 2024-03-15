@@ -1,15 +1,9 @@
 import React from "react";
 
-const ProductList = () => {
-  // get data from API
-  return (
-    <div>
-      {/*
-        map data from API
-        <Product /> 
-      */}
-    </div>
-  );
+type Props = {};
+
+const ProductList = (props: Props) => {
+  return <div>ProductList</div>;
 };
 
 export default ProductList;
