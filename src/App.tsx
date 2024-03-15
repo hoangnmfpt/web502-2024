@@ -6,7 +6,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Admin from "./pages/Admin";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
-import Notfound from "~/pages/Notfound";
+import Notfound from "@/pages/Notfound";
 import { ThemeProvider } from "react-bootstrap";
 
 const App: React.FC = () => {

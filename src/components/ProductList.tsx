@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Product from "./Product";
-import instance from "~/apis";
+import instance from "@/apis";
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState([]);
