@@ -1,12 +1,27 @@
-import { useState } from 'react';
 import './App.css';
-import Header from './components/Header';
 import Footer from './components/Footer';
-import Home from './pages/Home';
-
-function App() {
+import Header from './components/Header';
+import { TProduct } from './interfaces/Product';
+const App: React.FC = () => {
 	// const [count, setCount] = useState(0);
+	// Get API lay thong tin product
+	const product: TProduct = {
+		id: 1,
+		name: 'Iphone 12',
+		price: 100,
+	};
+	type TProps = { product: TProduct; name: string };
 
+	const Shop = (props: TProps) => {
+		return (
+			<div>
+				<p>{props.name}</p>
+				<p>{props.product.id}</p>
+				<p>{props.product.name}</p>
+				<p>{props.product.price}</p>
+			</div>
+		);
+	};
 	return (
 		<div>
 			{/* <div className="card">
@@ -16,10 +31,11 @@ function App() {
 			</div> */}
 
 			<Header />
-			<Home />
+			{/* <Home /> */}
+			<Shop product={product} name={'Hoang'} />
 			<Footer />
 		</div>
 	);
-}
+};
 
 export default App;
