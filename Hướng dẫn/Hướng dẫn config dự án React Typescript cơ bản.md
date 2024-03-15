@@ -1,5 +1,6 @@
 ### Bước 0 - Cài đặt các extension cần thiết:
 
+```
 Better Comments
 Bracket Pair Colorizer 2
 Javascript (ES6) code snippets
@@ -18,6 +19,7 @@ Prettier - Code formatter
 ESLint
 vscode-icons
 Dracula Official
+```
 
 - Một số extention cần cấu hình thêm mới có thể hoạt động.
 
@@ -86,7 +88,7 @@ module.exports = {
 
 ### Bước 4 - Config Prettier để format code:
 
-Tạo file .prettierrc trong thư trong thư mục root với nội dung dưới đây
+Tạo file .prettierrc trong thư trong thư mục gốc với nội dung dưới đây
 
 ```
 {
@@ -103,7 +105,7 @@ Tạo file .prettierrc trong thư trong thư mục root với nội dung dưới
 
 ```
 
-Tiếp theo Tạo file .prettierignore ở thư mục root với nội dung:
+Tiếp theo Tạo file .prettierignore ở thư mục gốc với nội dung:
 
 ```
 node_modules/
@@ -115,7 +117,7 @@ Mục đích là Prettier bỏ qua các file không cần thiết
 
 ### Bước 5 - Config editor để chuẩn hóa cấu hình editor
 
-Tạo file .editorconfig ở thư mục root
+Tạo file .editorconfig ở thư mục gốc
 Mục đích là cấu hình các config đồng bộ các editor với nhau nếu dự án có nhiều người tham gia.
 
 Để VS Code hiểu được file này thì anh em cài Extension là EditorConfig for VS Code nhé
