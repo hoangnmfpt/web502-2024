@@ -7,9 +7,9 @@ import Admin from "./pages/Admin";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import Notfound from "~/pages/Notfound";
-import { Container, ThemeProvider } from "react-bootstrap";
+import { ThemeProvider } from "react-bootstrap";
 
-function App() {
+const App: React.FC = () => {
   return (
     <>
       <Router>
@@ -31,6 +31,6 @@ function App() {
       </Router>
     </>
   );
-}
+};
 
 export default App;
