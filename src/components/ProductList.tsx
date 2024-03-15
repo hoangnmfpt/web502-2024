@@ -1,46 +1,28 @@
-import { TProduct } from '~/interfaces/TProduct'
+import { TProduct } from '@/interfaces/TProduct'
+import { useEffect, useState } from 'react'
 
 const ProductList = () => {
-  const products: TProduct[] = [
-    {
-      id: 1,
-      title: 'iPhone 9',
-      description: 'An apple mobile which is nothing like apple',
-      price: 549,
-      discountPercentage: 12.96,
-      rating: 4.69,
-      stock: 94,
-      brand: 'Apple',
-      category: 'smartphones',
-      thumbnail: 'https://cdn.dummyjson.com/product-images/1/thumbnail.jpg',
-      images: [
-        'https://cdn.dummyjson.com/product-images/1/1.jpg',
-        'https://cdn.dummyjson.com/product-images/1/2.jpg',
-        'https://cdn.dummyjson.com/product-images/1/3.jpg',
-        'https://cdn.dummyjson.com/product-images/1/4.jpg',
-        'https://cdn.dummyjson.com/product-images/1/thumbnail.jpg'
-      ]
-    },
-    {
-      id: 2,
-      title: 'iPhone X',
-      description:
-        'SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...',
-      price: 899,
-      discountPercentage: 17.94,
-      rating: 4.44,
-      stock: 34,
-      brand: 'Apple',
-      category: 'smartphones',
-      thumbnail: 'https://cdn.dummyjson.com/product-images/2/thumbnail.jpg',
-      images: [
-        'https://cdn.dummyjson.com/product-images/2/1.jpg',
-        'https://cdn.dummyjson.com/product-images/2/2.jpg',
-        'https://cdn.dummyjson.com/product-images/2/3.jpg',
-        'https://cdn.dummyjson.com/product-images/2/thumbnail.jpg'
-      ]
+  // ! Dump component va smart component
+  const [products, setProducts] = useState<TProduct[]>([])
+  useEffect(() => {
+    // Cach 1:
+    // fetch('http://localhost:3000/products')
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(data)
+    //     setProducts(data)
+    //   })
+
+    // Cach 2:
+    const getProducts = async () => {
+      const res = await fetch('http://localhost:3000/products')
+      const data = await res.json()
+      setProducts(data)
     }
-  ]
+    getProducts()
+  }, [])
+
+  // ! DependencyList = Danh sách phụ thuộc
   return (
     <div>
       <h1>Product List</h1>
@@ -49,12 +31,6 @@ const ProductList = () => {
           <h2>{product.title}</h2>
           <p>{product.description}</p>
           <p>{product.price}</p>
-          <p>{product.discountPercentage}</p>
-          <p>{product.rating}</p>
-          <p>{product.stock}</p>
-          <p>{product.brand}</p>
-          <p>{product.category}</p>
-          <img src={product.thumbnail} alt={product.title} />
         </div>
       ))}
     </div>

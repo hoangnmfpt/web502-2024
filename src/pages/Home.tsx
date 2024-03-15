@@ -5,7 +5,8 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { TProduct } from '@/interfaces/TProduct'
 
-const Home = (product: TProduct) => {
+type Props = {}
+const Home = (props: Props) => {
   return (
     <div>
       <Header />
@@ -16,11 +17,5 @@ const Home = (product: TProduct) => {
     </div>
   )
 }
-
-// const sum = (a: number, b: number) => {
-//   return a + b
-// }
-
-// sum(2, 3)
 
 export default Home
