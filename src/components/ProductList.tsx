@@ -1,3 +1,4 @@
+import instance from '@/apis'
 import { TProduct } from '@/interfaces/TProduct'
 import { useEffect, useState } from 'react'
 
@@ -15,9 +16,13 @@ const ProductList = () => {
 
     // Cach 2:
     const getProducts = async () => {
-      const res = await fetch('http://localhost:3000/products')
-      const data = await res.json()
-      setProducts(data)
+      try {
+        const { data } = await instance.get('/products')
+        console.log(data)
+        setProducts(data)
+      } catch (error) {
+        console.log(error)
+      }
     }
     getProducts()
   }, [])
@@ -31,6 +36,7 @@ const ProductList = () => {
           <h2>{product.title}</h2>
           <p>{product.description}</p>
           <p>{product.price}</p>
+          <img width={100} src={product.thumbnail} alt={product.title} />
         </div>
       ))}
     </div>
