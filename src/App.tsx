@@ -1,44 +1,41 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
-import Header from './components/Header'
-import Footer from './components/Footer'
 import { Product } from './common/Product'
-
-const product = {
-  id: 1,
-  title: 'Iphone 12',
-  price: 1000,
-  description: 'New product'
-}
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Home from './pages/Home'
+import instance from './apis'
 
 // ! Props = Propeties (Thuộc tính)
-type Props = { product: Product; name: string }
-
-const Home = (props: Props) => {
-  return (
-    <div>
-      <h1>San pham duoc xem nhieu!</h1>
-      <div>{props.product.id}</div>
-      <div>{props.product.title}</div>
-      <div>{props.product.price}</div>
-      <div>{props.product.description}</div>
-      <span>San pham nay cua {props.name}</span>
-    </div>
-  )
-}
-
 // ! Lay ten cua nguoi dung tinh toan... co ket qua la yourname
 
-const Hello = ({ yourName }: { yourName: string }) => {
-  return <div>Xin chao ban : {yourName}</div>
-}
+// ! App là dumb component
+const App = () => {
+  const [product, setProduct] = useState<Product>({
+    title: 'Gia tri khoi tao mac dinh',
+    price: 0,
+    description: ''
+  })
 
-function App() {
+  useEffect(() => {
+    // fetch('http://localhost:3000/products/1')
+    //   .then((res) => res.json())
+    //   .then((data) => {
+    //     console.log(product)
+    //     setProduct(data)
+    //   })
+    ;(async () => {
+      const { data } = await instance.get('/products/1')
+      console.log(data)
+      setProduct(data)
+    })()
+  }, [])
+
   return (
     <>
       <Header />
-      <Home product={product} name={'Hoang'} />
-      <Hello yourName={'Hoang'} />
+      <Home product={product} />
+      {/* Home la UI component */}
       <Footer />
     </>
   )
