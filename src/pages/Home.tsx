@@ -1,29 +1,40 @@
 import { useState } from "react";
-import ProductList from "~/components/ProductList";
+import Product from "~/components/Product";
 
 const Home = () => {
   const [product, setProduct] = useState({
-    name: "Gia tri khoi tao",
+    title: "",
+    description: "",
     price: 0,
   });
 
+  // ! Get API va lay ra duoc:
+  const productData = {
+    id: 1,
+    title: "iPhone 9",
+    description: "An apple mobile which is nothing like apple",
+    price: 549,
+    discountPercentage: 12.96,
+    rating: 4.69,
+    stock: 94,
+    brand: "Apple",
+    category: "smartphones",
+    thumbnail: "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+    images: [
+      "https://cdn.dummyjson.com/product-images/1/1.jpg",
+      "https://cdn.dummyjson.com/product-images/1/2.jpg",
+      "https://cdn.dummyjson.com/product-images/1/3.jpg",
+      "https://cdn.dummyjson.com/product-images/1/4.jpg",
+      "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+    ],
+  };
+
   const handleClick = () => {
-    setProduct({ name: "Iphone 12", price: 2000 });
+    setProduct(productData);
   };
   const showProduct1 = (sanPham: any) => {
     return <h1>{sanPham.name}</h1>;
   };
-
-  type Props = { sanPham: any; name: string };
-
-  const ShowProduct2 = (props: Props) => {
-    return (
-      <h1>
-        San pham {props.sanPham.name} thuoc ve {props.name}
-      </h1>
-    );
-  };
-
   // ! props = Properties = Các thuộc tính
 
   return (
@@ -32,7 +43,7 @@ const Home = () => {
         Click Me!
       </button>
       {showProduct1(product)}
-      <ShowProduct2 sanPham={product} name={"Hoang"} />
+      <Product product={product} />
     </div>
   );
 };
