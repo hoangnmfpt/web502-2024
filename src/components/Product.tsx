@@ -1,9 +1,17 @@
 import React from "react";
 
-type Props = {};
+type TProduct = {
+  name: string,
+  price: number
 
-const Product = (props: Props) => {
-  return <div>Product</div>;
+}
+
+// UI Component  = dumb component
+const Product = (props:{product: TProduct}) => {
+  return  <>
+  <h2>{props.product.name}</h2>
+  <p>{props.product.price}</p>
+  </>
 };
 
 export default Product;
