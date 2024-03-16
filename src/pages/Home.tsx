@@ -3,22 +3,36 @@ import ProductList from "~/components/ProductList";
 
 const Home = () => {
   const [product, setProduct] = useState({
-    price: 0,
     name: "Gia tri khoi tao",
+    price: 0,
   });
 
   const handleClick = () => {
-    setProduct({ price: 200, name: "Ten moi cua san pham" });
+    setProduct({ name: "Iphone 12", price: 2000 });
   };
+  const showProduct1 = (sanPham: any) => {
+    return <h1>{sanPham.name}</h1>;
+  };
+
+  type Props = { sanPham: any; name: string };
+
+  const ShowProduct2 = (props: Props) => {
+    return (
+      <h1>
+        San pham {props.sanPham.name} thuoc ve {props.name}
+      </h1>
+    );
+  };
+
+  // ! props = Properties = Các thuộc tính
 
   return (
     <div>
-      <h1>San pham ban chay</h1>
-      <button className="btn" onClick={() => handleClick}>
+      <button className="btn" onClick={() => handleClick()}>
         Click Me!
       </button>
-      {product.name}
-      <ProductList />
+      {showProduct1(product)}
+      <ShowProduct2 sanPham={product} name={"Hoang"} />
     </div>
   );
 };
