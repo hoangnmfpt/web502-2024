@@ -1,5 +1,4 @@
 import './App.css'
-import { TProduct } from './interfaces/TProduct'
 import Home from './pages/Home'
 
 function App() {
