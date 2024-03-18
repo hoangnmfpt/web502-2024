@@ -1,21 +1,27 @@
-import { useEffect, useState } from 'react'
 import './App.css'
-import { Product } from './common/Product'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import Home from './pages/Home'
-import instance from './apis'
 
-// ! Props = Propeties (Thuộc tính)
-// ! Lay ten cua nguoi dung tinh toan... co ket qua la yourname
+import { Route, Routes } from 'react-router-dom'
+import Shop from './pages/Shop'
+import ProductDetail from './pages/ProductDetail'
+import Login from './pages/Login'
+import Register from './pages/Register'
+import NotFound from './pages/NotFound'
 
-// ! App là dumb component
 const App = () => {
   return (
     <>
       <Header />
-      <Home />
-      {/* Home la UI component */}
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/shop' element={<Shop />} />
+        <Route path='/shop/:id' element={<ProductDetail />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='*' element={<NotFound />} />
+      </Routes>
       <Footer />
     </>
   )

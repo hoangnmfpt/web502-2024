@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import instance from '../apis'
 import { Product } from '../common/Product'
 
@@ -6,17 +6,12 @@ const ProductList = () => {
   const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
-    // fetch('http://localhost:3000/products/1')
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(product)
-    //     setProduct(data)
-    //   })
-    ;(async () => {
+    const getProducts = async () => {
       const { data } = await instance.get('/products')
       console.log(data)
       setProducts(data)
-    })()
+    }
+    getProducts()
   }, [])
   return (
     <>
