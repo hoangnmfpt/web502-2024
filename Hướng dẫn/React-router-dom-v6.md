@@ -74,3 +74,122 @@ export const Header = () => {
 ```
 
 ## 5. Xây dựng các page tương ứng với các router phía trên
+
+## 6. Chuyển trang với useNavigate.
+
+- Nếu như sau một sự kiện là bấm nút hoặc đăng nhập thành công thì trang được điều hướng sang một trang khác, lúc này bạn hãy sử dụng useNavigate:
+
+```tsx
+import { useNavigate } from "react-router-dom";
+
+const Dashboard = () => {
+  const navigate = useNavigate();
+
+  return <button onClick={() => navigate("orders")}>Go to Orders</button>;
+};
+```
+
+## 7. useNavigate với nhiều tuỳ chọn
+
+### 7.1. history
+
+- Nếu bạn muốn dùng back, foward thì hãy thêm tham số cho useNavigate là các số nguyên.
+
+```tsx
+import { useNavigate } from "react-router-dom";
+
+export default function App() {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      <button onClick={() => navigate(-2)}>Go 2 pages back</button>
+      <button onClick={() => navigate(-1)}>Go back</button>
+      <button onClick={() => navigate(1)}>Go forward</button>
+      <button onClick={() => navigate(2)}>Go 2 pages forward</button>
+    </>
+  );
+}
+```
+
+### 7.2. useNavigate với replace true:
+
+- Sử dụng tham số thứ hai của navigate để chỉ thay đổi URL chứ không muốn URL đó lưu lại trong lịch sử trình duyệt. Kiểu như tại trang A đi tới trang B, tại trang B chúng ta click back trên trình duyệt thì sẽ không quay trở lại trang A nữa.
+
+```tsx
+<button onClick={() => navigate("orders", { replace: true })}>
+  Go to Orders
+</button>
+```
+
+### 7.3. useNavigate với passing data
+
+- Tình huống đặt ra là tại componentA khi navigate chuyển trang sang componentB sẽ kèm thêm một id là 6996
+- Tại componentB sẽ nhận được data thông qua useLocation
+
+```tsx
+import { useNavigate } from "react-router-dom";
+
+const componentA = () => {
+  const navigate = useNavigate();
+  return (
+    <button onClick={() => navigate("orders", { state: { id: "6996" } })}>
+      Send ID to componentB
+    </button>
+  );
+};
+```
+
+```tsx
+import { useLocation } from "react-router-dom";
+
+const ComponentB = () => {
+  const location = useLocation();
+  return <h1>ID nhận từ componentA: {location.state?.id}</h1>;
+};
+```
+
+### 7.4. Component Navigate
+
+- Sử dụng component Navigate để chuyển trang trong phần return ở function
+
+```tsx
+import { Navigate } from "react-router-dom";
+import Dashboard from "./Dashboard";
+
+const PrivateRoutes = () => {
+  const isAuth = true;
+
+  return isAuth ? <Dashboard /> : <Navigate to="/login" />;
+};
+```
+
+## 8. Active link với tên class là "active"
+
+- Nếu như bạn muốn link đang active có style khác với class là "active". Bạn chỉ việc đổi toàn bộ thẻ Link thành NavLink và styling cho class có tên là active
+
+## 9. Nested Routes (Router lồng nhau)
+
+- Sử dụng Outlet để hiển thị component con tại đúng vị trí trong 1 component cha (nếu có 2 component route lồng nhau)
+
+```tsx
+<Routes>
+  <Route path="/" element={<Dashboard />} />
+  <Route path="/products" element={<Products />}>
+    <Route path="laptop" element={<Laptop />} />
+    <Route path="desktop" element={<Desktop />} />
+  </Route>
+</Routes>
+```
+
+```tsxt
+import { Outlet } from 'react-router-dom'
+
+const Products = () => (
+  <>
+    <h1>Products</h1>
+    <Outlet />
+  </>
+)
+
+```
