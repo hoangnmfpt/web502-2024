@@ -1,4 +1,3 @@
-import React from 'react';
 import { TProduct } from '~/interfaces/Product';
 
 type Props = {

@@ -1,33 +1,30 @@
+import { useState } from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import Header from './components/Header';
 import { TProduct } from './interfaces/Product';
+
+// ! app = smart component (component có chứa phần logic hoặc xử lý data)
 const App: React.FC = () => {
 	// const [count, setCount] = useState(0);
 	// Get API lay thong tin product
-	const product: TProduct = {
-		id: 1,
-		title: 'iPhone 9',
-		description: 'An apple mobile which is nothing like apple',
-		price: 549,
-		discountPercentage: 12.96,
-		rating: 4.69,
-		stock: 94,
-		brand: 'Apple',
-		category: 'smartphones',
-		thumbnail: 'https://cdn.dummyjson.com/product-images/1/thumbnail.jpg',
-		images: [
-			'https://cdn.dummyjson.com/product-images/1/1.jpg',
-			'https://cdn.dummyjson.com/product-images/1/2.jpg',
-			'https://cdn.dummyjson.com/product-images/1/3.jpg',
-			'https://cdn.dummyjson.com/product-images/1/4.jpg',
-			'https://cdn.dummyjson.com/product-images/1/thumbnail.jpg',
-		],
+
+	const [product, setProduct] = useState({
+		title: 'Gia tri khoi tao',
+		price: 0,
+		description: '',
+	});
+
+	const updateProduct = () => {
+		fetch('http://localhost:3000/products/1')
+			.then((res) => res.json())
+			.then((data) => {
+				console.log(data);
+				setProduct(data);
+			});
 	};
 
-	type TProps = { product: TProduct; name: string };
-
-	const Shop = (props: TProps) => {
+	const Shop1 = (props: { product: TProduct }) => {
 		return (
 			<div>
 				<p>{props.name}</p>
@@ -37,17 +34,27 @@ const App: React.FC = () => {
 			</div>
 		);
 	};
+
+	// const shop2 = (product: TProduct) => {
+	// 	return (
+	// 		<>
+	// 			<p>{product.id}</p>
+	// 			<p>{product.title}</p>
+	// 			<p>{product.price}</p>
+	// 		</>
+	// 	);
+	// };
+
+	// ! UI Component = dumb component
+
+	// ! Props = Propeties = Thuộc tính
+	// ! State = Trạng thái
 	return (
 		<div>
-			{/* <div className="card">
-				<button onClick={() => setCount((count) => count + 1)}>
-					count is {count}
-				</button>
-			</div> */}
-
 			<Header />
-			{/* <Home /> */}
-			<Shop product={product} name={'Hoang'} />
+			<button onClick={() => updateProduct()}>Cap nhat san pham</button>
+			<Shop1 product={product} />
+			{/* {shop2(product)} */}
 			<Footer />
 		</div>
 	);
