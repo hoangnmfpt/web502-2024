@@ -1,19 +1,7 @@
-import { TProduct } from '~/interfaces/Product';
+import ProductList from '~/components/ProductList';
 
-type Props = {
-	product: TProduct;
-};
-
-// ! Props = Properties (Thuộc tính)
-
-const Shop = (props: Props) => {
-	return (
-		<div>
-			<p>{props.product.id}</p>
-			<p>{props.product.title}</p>
-			<p>{props.product.price}</p>
-		</div>
-	);
+const Shop = () => {
+	return <ProductList />;
 };
 
 export default Shop;
