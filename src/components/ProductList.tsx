@@ -11,10 +11,10 @@ const ProductList = () => {
     // fetch('http://localhost:3000/products').then(res => res.json()).then(data => {setProducts(data)})
 
     // Cach 2:
-    // (async () => {
-    //   const data = await getAllProducts()
-    //   setProducts(data)
-    // })()
+    (async () => {
+      const data = await getAllProducts()
+      setProducts(data)
+    })()
 
     // Cach 3:
     const getProducts = async () => {
