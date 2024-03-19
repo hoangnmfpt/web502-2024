@@ -8,12 +8,7 @@ const myFamily = {
 // const mother = myFamily.mother
 // const father = myFamily.father
 
-const { father, mother} =   {
-  father: 'John',
-  mother: 'Jane',
-  sister: 'Sally',
-  son: 'Tom'
-}
+const { father, mother} = myFamily
 
 console.log(mother, father)
 
