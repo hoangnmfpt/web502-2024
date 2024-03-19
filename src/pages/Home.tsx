@@ -1,49 +1,36 @@
-import { useState } from "react";
-import Product from "~/components/Product";
+import { useEffect, useState } from "react";
+import ProductList from "~/components/ProductList";
+import { TProduct } from "~/interfaces/Product";
 
 const Home = () => {
-  const [product, setProduct] = useState({
-    title: "",
-    description: "",
-    price: 0,
-  });
+  const [products, setProducts] = useState<TProduct[]>([]);
 
   // ! Get API va lay ra duoc:
-  const productData = {
-    id: 1,
-    title: "iPhone 9",
-    description: "An apple mobile which is nothing like apple",
-    price: 549,
-    discountPercentage: 12.96,
-    rating: 4.69,
-    stock: 94,
-    brand: "Apple",
-    category: "smartphones",
-    thumbnail: "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-    images: [
-      "https://cdn.dummyjson.com/product-images/1/1.jpg",
-      "https://cdn.dummyjson.com/product-images/1/2.jpg",
-      "https://cdn.dummyjson.com/product-images/1/3.jpg",
-      "https://cdn.dummyjson.com/product-images/1/4.jpg",
-      "https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-    ],
-  };
 
-  const handleClick = () => {
-    setProduct(productData);
-  };
-  const showProduct1 = (sanPham: any) => {
-    return <h1>{sanPham.name}</h1>;
-  };
-  // ! props = Properties = Các thuộc tính
+    useEffect(() =>{ fetch("http://localhost:3000/products")
+    .then((res) => res.json())
+    .then((data) => {
+      setProducts(data);
+      return () =>{
+        console.log("unmount");
+        //! cleanup function
+      }
+    })}, [])
+
+  /**
+   * ! Dependency với 3 trường hợp:
+   * ? undefined: không có dependency - re-render khi state được cập nhật.
+   * ? []: empty array - chỉ re-render khi componentDidMount.
+   * ? [state1, state2,...]: re-render khi một trong số các state được cập nhật.
+   */
 
   return (
     <div>
-      <button className="btn" onClick={() => handleClick()}>
+      {/* <button className="btn" onClick={() => handleClick()}>
         Click Me!
-      </button>
-      {showProduct1(product)}
-      <Product product={product} />
+      </button> */}
+      
+      <ProductList products={products} />
     </div>
   );
 };

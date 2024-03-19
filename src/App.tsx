@@ -9,35 +9,11 @@ function App() {
     <>
       <div className="app">
         <Header />
-        {/* banner */}
-        {/* Danh sach san pham */}
         <Home />
         <Footer />
       </div>
     </>
   );
-
-  console.log(
-    typeof React.createElement(
-      "div",
-      { className: "app" },
-      React.createElement(
-        "h1",
-        { className: "title", style: { color: "red" } },
-        "Hello, World!"
-      )
-    )
-  );
-
-  // return React.createElement(
-  //   "div",
-  //   { className: "app" },
-  //   React.createElement(
-  //     "h1",
-  //     { className: "title", style: { color: "red" } },
-  //     "Hello, World!"
-  //   )
-  // );
 }
 
 export default App;
