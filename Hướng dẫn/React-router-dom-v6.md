@@ -177,19 +177,37 @@ const PrivateRoutes = () => {
   <Route path="/" element={<Dashboard />} />
   <Route path="/products" element={<Products />}>
     <Route path="laptop" element={<Laptop />} />
-    <Route path="desktop" element={<Desktop />} />
+    <Route path="pc" element={<PC />} />
   </Route>
 </Routes>
 ```
 
-```tsxt
-import { Outlet } from 'react-router-dom'
+```tsx
+import { Outlet } from "react-router-dom";
 
 const Products = () => (
   <>
     <h1>Products</h1>
     <Outlet />
   </>
-)
+);
+```
 
+## 10. Sử dụng useParams để lấy tham số từ URL
+
+```tsx
+<Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/shop" element={<Shop />} />
+  <Route path="/shop/:productId" element={<ProductDetail />} />
+</Routes>
+```
+
+```tsx
+import { useParams } from "react-router-dom";
+
+const ProductDetail = () => {
+  const params = useParams();
+  return <h2>Chi tiết sản phẩm: {params.productId}</h2>;
+};
 ```
