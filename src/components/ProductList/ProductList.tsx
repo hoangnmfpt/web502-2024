@@ -10,8 +10,8 @@ const ProductList = () => {
     const getProducts = async () => {
       try {
         const { data } = await instance.get('/products')
-        console.log(data)
-        setProducts(data)
+        console.log(data.data)
+        setProducts(data.data)
       } catch (error) {
         console.log(error)
       }
@@ -35,7 +35,7 @@ const ProductList = () => {
     <div>
       <h1>Product List</h1>
       {products.map((product) => (
-        <div key={product.id}>
+        <div key={product._id}>
           <h2>{product.title}</h2>
           <p>{product.description}</p>
           <p>{product.price}</p>
