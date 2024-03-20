@@ -1,29 +1,31 @@
 import { NavLink } from 'react-router-dom'
-
+import style from './Header.module.scss'
 const Header = () => {
   return (
-    <ul>
-      <li>
-        <NavLink to='/' className='nav-link'>
-          Home
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to='/shop' className='nav-link'>
-          Shop
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to='/login' className='nav-link'>
-          Login
-        </NavLink>
-      </li>
-      <li>
-        <NavLink to='/register' className='nav-link'>
-          Register
-        </NavLink>
-      </li>
-    </ul>
+    <header>
+      <ul>
+        <li>
+          <NavLink to='/' className={style.navLink}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/shop' className={style.navLink}>
+            Shop
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/login' className={style.navLink}>
+            Login
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to='/register' className={style.navLink}>
+            Register
+          </NavLink>
+        </li>
+      </ul>
+    </header>
   )
 }
 
