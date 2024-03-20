@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import s from './NotFound.module.css'
+import s from './NotFound.module.scss'
 type Props = {}
 
 const NotFound = (props: Props) => {
