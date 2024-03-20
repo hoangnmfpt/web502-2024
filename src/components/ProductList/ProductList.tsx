@@ -7,19 +7,8 @@ const ProductList = () => {
 	const [products, setProducts] = useState<TProduct[]>([]);
 
 	useEffect(() => {
-		// fetch('http://localhost:3000/products')
-		// 	.then((res) => res.json())
-		// 	.then((data) => {
-		// 		console.log(data);
-		// 		setProducts(data);
-		// 	});
-		// return () => {
-		// 	// cleanup function
-		// };
-		// ! Cách 2:
 		const fetchProducts = async () => {
 			const { data } = await instance.get(`/products`);
-			// ! http://localhost:3000/products
 			setProducts(data);
 		};
 		fetchProducts();
