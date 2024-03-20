@@ -1,7 +1,12 @@
 import ProductList from '~/components/ProductList';
 
 const Shop = () => {
-	return <ProductList />;
+	return (
+		<>
+			<h1>Shop</h1>
+			<ProductList />
+		</>
+	);
 };
 
 export default Shop;
