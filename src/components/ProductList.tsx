@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import instance from "~/apis";
 import { getAllProducts } from "~/apis/product";
 import { TProduct } from "~/interfaces/Product";
@@ -22,9 +23,12 @@ const ProductList = (props: Props) => {
   }, []) 
   return <div>
     {products.map((product: TProduct) => <div key={product.id}>
-      <h3>{product.title}</h3>
+      <Link to={`/shop/${product.id}`}>
+        <h3>{product.title}</h3>
+      </Link>
       <p>{product.price}</p>
-      <img width={360} src={product.thumbnail} alt={product.title} />
+      <Link to={`/shop/${product.id}`}><img width={360} src={product.thumbnail} alt={product.title} /></Link>
+     
       <p>{product.description}</p>
     </div>)}
   </div>;
