@@ -1,18 +1,16 @@
 import "./App.css";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
-import Banner from "./components/Banner";
+import Footer from "./components/Footer/Footer";
+import Header from "./components/Header/Header";
 import { Routes, Route } from 'react-router-dom';
 import Shop from './pages/Shop';
 import ProductDetail from "./pages/ProductDetail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Notfound from "./pages/Notfound";
+import Banner from "./components/Banner/Banner";
 
-type Props = {};
-
-const App = (props: Props) => {
+const App = () => {
   return (
     <>
       <Header />
@@ -26,6 +24,7 @@ const App = (props: Props) => {
         <Route path="*" element={<Notfound />} />
       </Routes>
       <Footer />
+      <button>Hello, click me!</button>
     </>
   );
 };

@@ -10,8 +10,7 @@ const ProductDetail = (props: Props) => {
   const [product, setProduct] = useState<TProduct | null>(null)
   useEffect(() => {
     const getProduct = async () => {
-      const { data } = await instance.get(`/products/${id}`)
-      console.log(data)
+      const { data } = await instance.get(`/product/${id}`)
       setProduct(data)
     }
     getProduct()
