@@ -1,17 +1,11 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import instance from "~/apis";
 import { TProduct } from "~/interfaces/Product";
 
-type Props = {};
-
-const ProductDetail = (props: Props) => {
+const ProductDetail = () => {
   const { id } = useParams();
-  const [product, setProduct] = useState<TProduct>({
-    title: "",
-    price: 0,
-    description: "",
-  });
+  const [product, setProduct] = useState<TProduct | null>(null);
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -28,10 +22,10 @@ const ProductDetail = (props: Props) => {
     <div>
       <h1>Chi tiet san pham</h1>
       <div>
-        <h2>{product.title}</h2>
-        <p>Gia: {product.price}</p>
-        <p>{product.description}</p>
-        <img src={product.thumbnail} alt={product.title} />
+        <h2>{product?.title}</h2>
+        <p>Gia: {product?.price}</p>
+        <p>{product?.description}</p>
+        <img src={product?.thumbnail} alt={product?.title} />
       </div>
     </div>
   );

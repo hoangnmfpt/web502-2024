@@ -5,36 +5,6 @@ import axios from "axios";
 import instance from "~/apis";
 
 const Home = () => {
-  const [products, setProducts] = useState<TProduct[]>([]);
-
-  // ! Get API va lay ra duoc:
-
-  useEffect(() => {
-    // Cach 1:
-    //   fetch("http://localhost:3000/products")
-    // .then((res) => res.json())
-    // .then((data) => {
-    //   setProducts(data);
-    //   return () =>{
-    //     console.log("unmount");
-    //     //! cleanup function
-    //   }
-    // })
-
-    // Cach 2:
-    const getAllProducts = async () => {
-      try {
-        // const { data } = await axios.get("http://localhost:3000/products");
-
-        const { data } = await instance.get("/products");
-        setProducts(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    getAllProducts();
-  }, []);
-
   /**
    * ! Dependency với 3 trường hợp:
    * ? undefined: không có dependency - re-render khi state được cập nhật.
@@ -44,11 +14,14 @@ const Home = () => {
 
   return (
     <div>
-      {/* <button className="btn" onClick={() => handleClick()}>
-        Click Me!
-      </button> */}
-
-      <ProductList products={products} />
+      <h2 className="sessionTitle">Danh cho nam:</h2>
+      <ProductList category="nam" />
+      <br />
+      <h2 className="sessionTitle">Danh cho nu:</h2>
+      <ProductList category="nu" />
+      <br />
+      <h2 className="sessionTitle">Danh cho tre em:</h2>
+      <ProductList category="kid" />
     </div>
   );
 };
