@@ -2,24 +2,17 @@ import { useEffect, useState } from "react";
 import instance from "~/apis";
 import { getAllProducts } from "~/apis/product";
 import { TProduct } from "~/interfaces/Product";
+type Props = {
+  category: string
+}
 
-
-const ProductList = () => {
+const ProductList = (props: Props) => {
   const [products, setProducts] = useState<TProduct[]>([])
   useEffect(() => {  
-    // Cach 1:
-    // fetch('http://localhost:3000/products').then(res => res.json()).then(data => {setProducts(data)})
-
-    // Cach 2:
-    (async () => {
-      const data = await getAllProducts()
-      setProducts(data)
-    })()
-
-    // Cach 3:
     const getProducts = async () => {
       try {
-        const { data } = await instance.get('/products')
+        // const { data } = await instance.get(`/products?category=${props.category}`)
+        const { data } = await instance.get(`/products`)
         setProducts(data)
       } catch (error) {
         console.log(error)
@@ -28,7 +21,6 @@ const ProductList = () => {
     getProducts()
   }, []) 
   return <div>
-    <h2>San pham danh cho nam:</h2>
     {products.map((product: TProduct) => <div key={product.id}>
       <h3>{product.title}</h3>
       <p>{product.price}</p>
