@@ -4,7 +4,10 @@ type Props = {}
 
 const Footer = (props: Props) => {
   return (
-    <footer className={st.footer}>Copyright by hoangnm - 2024</footer>
+    <footer className={st.footer + " " + 'd-flex'}>
+      <div>Copyright by hoangnm - 2024</div>
+      <button>subribe Kenh hoangnm</button>
+    </footer>
   )
 }
 
