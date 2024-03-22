@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import instance from '~/apis';
 import { TProduct } from '~/interfaces/Product';
 import style from './ProductList.module.scss';
+import { Link } from 'react-router-dom';
 
 const ProductList = () => {
 	const [products, setProducts] = useState<TProduct[]>([]);
@@ -18,9 +19,13 @@ const ProductList = () => {
 			<h1>Danh sách sản phẩm bán chạy</h1>
 			{products.map((item) => (
 				<div className={style.productCart} key={item.id}>
-					<h3 className="card-title">{item.title}</h3>
+					<Link to={`/shop/${item.id}`}>
+						<h3 className="card-title">{item.title}</h3>
+					</Link>
 					<div>{item.price}</div>
-					<img width={'100%'} src={item.thumbnail} alt={item.title} />
+					<Link to={`/shop/${item.id}`}>
+						<img width={'100%'} src={item.thumbnail} alt={item.title} />
+					</Link>
 					<p>{item.description}</p>
 				</div>
 			))}
