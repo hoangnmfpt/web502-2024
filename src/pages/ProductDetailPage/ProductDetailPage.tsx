@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import instance from '~/apis';
+import ProductItem from '~/components/ProductItem/ProductItem';
 import { TProduct } from '~/interfaces/Product';
 
 type Props = {};
@@ -18,10 +19,7 @@ const ProductDetail = (props: Props) => {
 	}, []);
 	return (
 		<div>
-			<h1>Chi tiet san pham co id la {params.productId}</h1>
-			<h2>{product?.title}</h2>
-			<img src={product?.thumbnail} alt={product?.title} />
-			<div>Gia san pham: {product?.price}</div>
+			<ProductItem product={product} viewMode={'popup'} />
 		</div>
 	);
 };
