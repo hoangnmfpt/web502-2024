@@ -1,6 +1,7 @@
 import instance from '@/apis'
 import { TProduct } from '@/interfaces/TProduct'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const ProductList = () => {
   // ! Dump component va smart component
@@ -36,10 +37,14 @@ const ProductList = () => {
       <h1>Product List</h1>
       {products.map((product) => (
         <div key={product.id}>
-          <h2>{product.title}</h2>
+          <Link to={`/shop/${product.id}`}>
+            <h2>{product.title}</h2>
+          </Link>
           <p>{product.description}</p>
           <p>{product.price}</p>
-          <img width={100} src={product.thumbnail} alt={product.title} />
+          <Link to={`/shop/${product.id}`}>
+            <img width={100} src={product.thumbnail} alt={product.title} />
+          </Link>
         </div>
       ))}
     </div>
