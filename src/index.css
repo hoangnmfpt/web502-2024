@@ -21,7 +21,7 @@ li {
 }
 
 a {
-	text-decoration: none;
+	text-decoration: none !important;
 }
 
 button {
@@ -38,9 +38,4 @@ button {
 button:hover {
 	border: 1px solid #ccc;
 	box-shadow: 0 0 12px rgba(0, 0, 0, 0.6);
-}
-
-.active {
-	background-color: #f5f5f5;
-	color: violet;
 }

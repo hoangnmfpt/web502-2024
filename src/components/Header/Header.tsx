@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Header.scss';
+import style from './Header.module.scss';
 
 const Header: React.FC = () => {
 	return (
@@ -8,22 +8,22 @@ const Header: React.FC = () => {
 			<nav>
 				<ul>
 					<li>
-						<NavLink className="itemLink" to="/">
+						<NavLink className={style.itemLink} to="/">
 							Home
 						</NavLink>
 					</li>
 					<li>
-						<NavLink className="itemLink" to="/shop">
+						<NavLink className={style.itemLink} to="/shop">
 							San pham HOT
 						</NavLink>
 					</li>
 					<li>
-						<NavLink className="itemLink" to="/login">
+						<NavLink className={style.itemLink} to="/login">
 							Login
 						</NavLink>
 					</li>
 					<li>
-						<NavLink className="itemLink" to="/register">
+						<NavLink className={style.itemLink} to="/register">
 							Register
 						</NavLink>
 					</li>
