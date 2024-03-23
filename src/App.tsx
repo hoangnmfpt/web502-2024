@@ -2,8 +2,8 @@ import "./App.css";
 import Home from "./pages/Home";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
-import { Routes, Route } from 'react-router-dom';
-import Shop from './pages/Shop';
+import { Routes, Route } from "react-router-dom";
+import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
@@ -15,6 +15,7 @@ const App = () => {
     <>
       <Header />
       <Banner />
+      <main className="main container">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/shop" element={<Shop />} />
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Notfound />} />
       </Routes>
+      </main>
       <Footer />
       <button>Hello, click me!</button>
     </>

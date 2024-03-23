@@ -1,34 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Carousel,
   CarouselItem,
   CarouselControl,
   CarouselIndicators,
   CarouselCaption,
-} from 'reactstrap';
+} from "reactstrap";
 
 const items = [
   {
-    src: 'https://picsum.photos/id/123/1200/400',
-    altText: 'Slide 1',
-    caption: 'Slide 1',
+    src: "https://picsum.photos/id/123/1200/400",
+    altText: "Slide 1",
+    caption: "Slide 1",
     key: 1,
   },
   {
-    src: 'https://picsum.photos/id/456/1200/400',
-    altText: 'Slide 2',
-    caption: 'Slide 2',
+    src: "https://picsum.photos/id/456/1200/400",
+    altText: "Slide 2",
+    caption: "Slide 2",
     key: 2,
   },
   {
-    src: 'https://picsum.photos/id/678/1200/400',
-    altText: 'Slide 3',
-    caption: 'Slide 3',
+    src: "https://picsum.photos/id/678/1200/400",
+    altText: "Slide 3",
+    caption: "Slide 3",
     key: 3,
   },
 ];
 
-function Banner(args) {
+type Args = {};
+function Banner(args: Args) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
 
@@ -44,7 +45,7 @@ function Banner(args) {
     setActiveIndex(nextIndex);
   };
 
-  const goToIndex = (newIndex) => {
+  const goToIndex = (newIndex: number) => {
     if (animating) return;
     setActiveIndex(newIndex);
   };

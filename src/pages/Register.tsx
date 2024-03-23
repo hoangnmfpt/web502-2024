@@ -1,9 +1,7 @@
-type Props = {}
+type Props = {};
 
 const Register = (props: Props) => {
-  return (
-    <div>Register</div>
-  )
-}
+  return <div>Register</div>;
+};
 
-export default Register
+export default Register;
