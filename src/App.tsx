@@ -8,12 +8,14 @@ import Notfound from "./pages/Notfound";
 import ProductDetail from "./pages/ProductDetail";
 import Register from "./pages/Register";
 import Shop from "./pages/Shop";
+import Banner from "./components/Banner/Banner";
 
 function App() {
   return (
     <>
       <div className="app">
         <Header />
+        <Banner />
         <main className="container" id="main">
           <Routes>
             <Route path="/" element={<Home />} />

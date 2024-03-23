@@ -1,8 +1,8 @@
-import React from "react";
+import style from "./Footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className={style.footer}>
       <p>© Copyright by hoangnm - 2024</p>
     </footer>
   );

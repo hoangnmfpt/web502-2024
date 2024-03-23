@@ -15,9 +15,8 @@ const ProductDetail = () => {
         console.log(error);
       }
     };
-
     getProduct();
-  });
+  }, []);
   return (
     <div>
       <h1>Chi tiet san pham</h1>
@@ -26,6 +25,12 @@ const ProductDetail = () => {
         <p>Gia: {product?.price}</p>
         <p>{product?.description}</p>
         <img src={product?.thumbnail} alt={product?.title} />
+        <div className="imagesList">
+          {product?.images &&
+            product.images.map((item) => {
+              return <img width={100} src={item} />;
+            })}
+        </div>
       </div>
     </div>
   );
