@@ -1,0 +1,19 @@
+.productItem {
+  width: 360px;
+  max-width: 100%;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  img {
+    width: 100%;
+  }
+  .content {
+    padding: 12px;
+    h2 {
+      color: red;
+      &:hover {
+        color: blue;
+      }
+    }
+  }
+}
