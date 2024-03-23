@@ -3,7 +3,7 @@ export type TProduct = {
   title: string;
   description: string;
   price: number;
-  discountPercentage?: number;
+  discountPercentage?: number | undefined;
   rating?: number;
   stock?: number;
   brand?: string;

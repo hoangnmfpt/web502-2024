@@ -19,6 +19,10 @@ const ProductDetail = (props: Props) => {
     <div>
       <h2>{product?.title}</h2>
       <img src={product?.thumbnail} alt={product?.title} />
+      <div>
+        {product?.images &&
+          product.images.map((item) => <img width={100} src={item} />)}
+      </div>
       <p>Gia: {product?.price}</p>
       <p>Mo ta: {product?.description}</p>
     </div>
