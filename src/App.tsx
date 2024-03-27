@@ -28,6 +28,9 @@ function App() {
     }
     getProducts()
   }, [])
+  const handleAdd = (product: TProduct) => {
+    console.log(product)
+  }
   return (
     <>
       <Header />
@@ -42,7 +45,7 @@ function App() {
         {/* admin */}
         <Route path='/admin'>
           <Route index element={<Dashboard products={products} />} />
-          <Route path='/admin/add' element={<ProductAdd />} />
+          <Route path='/admin/add' element={<ProductAdd onAdd={handleAdd} />} />
         </Route>
         {/* not found */}
         <Route path='*' element={<NotFound />} />
