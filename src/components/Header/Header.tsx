@@ -19,6 +19,11 @@ export const Header = () => {
           Register
         </NavLink>
       </li>
+      <li>
+        <NavLink to='/admin' className={style.navLink}>
+          Admin Page
+        </NavLink>
+      </li>
     </ul>
 
     // <nav className='navbar navbar-expand-lg bg-body-tertiary'>
