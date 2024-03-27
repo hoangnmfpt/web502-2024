@@ -10,11 +10,6 @@ const Header = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to='/shop' className={style.navLink}>
-            Shop
-          </NavLink>
-        </li>
-        <li>
           <NavLink to='/login' className={style.navLink}>
             Login
           </NavLink>
@@ -22,6 +17,12 @@ const Header = () => {
         <li>
           <NavLink to='/register' className={style.navLink}>
             Register
+          </NavLink>
+        </li>
+
+        <li>
+          <NavLink to='/admin' className={style.navLink}>
+            Admin Page
           </NavLink>
         </li>
       </ul>

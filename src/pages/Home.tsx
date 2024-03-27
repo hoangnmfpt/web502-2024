@@ -1,12 +1,27 @@
-import ProductList from '../components/ProductList/ProductList'
+import { Link } from 'react-router-dom'
+import { Product } from '../common/Product'
 
-interface Props {}
+interface Props {
+  products: Product[]
+}
 
-const Home = (props: Props) => {
+const Home: React.FC<Props> = ({ products }) => {
   return (
     <div>
       <h1>San pham duoc xem nhieu:</h1>
-      <ProductList />
+
+      {products.map((product) => (
+        <div key={product.id}>
+          <Link to={`/shop/${product.id}`}>
+            <img width={100} src={product.thumbnail} alt={product.title} />
+          </Link>
+          <Link to={`/shop/${product.id}`}>
+            <h2>{product.title}</h2>
+          </Link>
+          <p>{product.price}</p>
+          <p>{product.description}</p>
+        </div>
+      ))}
     </div>
   )
 }
