@@ -7,7 +7,6 @@ type Props = {
 };
 
 const Dashboard: React.FC<Props> = ({ products }) => {
-	console.log(products);
 	return (
 		<div>
 			<h1>Hello, admin</h1>
