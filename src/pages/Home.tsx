@@ -8,8 +8,6 @@ interface Props {
 const Home: React.FC<Props> = ({ products }) => {
   return (
     <div>
-      <h1>San pham duoc xem nhieu:</h1>
-
       {products.map((product) => (
         <div key={product.id}>
           <Link to={`/shop/${product.id}`}>
