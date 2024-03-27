@@ -1,6 +1,5 @@
-import React from 'react'
-import { Product } from '../../common/Product'
 import { Link } from 'react-router-dom'
+import { Product } from '../../common/Product'
 
 type Props = {
   products: Product[]
@@ -26,7 +25,7 @@ const Dashboard = ({ products }: Props) => {
         </thead>
         <tbody>
           {products.map((item) => (
-            <tr>
+            <tr key={item.id}>
               <td>{item.id}</td>
               <td>{item.title}</td>
               <td>{item.price}</td>

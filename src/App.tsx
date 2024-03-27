@@ -4,7 +4,7 @@ import Header from './components/Header/Header'
 import Home from './pages/Home'
 
 import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import instance from './apis'
 import { Product } from './common/Product'
 import Login from './pages/Login'
@@ -13,8 +13,10 @@ import ProductDetail from './pages/ProductDetail'
 import Register from './pages/Register'
 import Dashboard from './pages/admin/Dashboard'
 import ProductAdd from './pages/admin/ProductAdd'
+import { createProduct } from './apis/product'
 
 const App = () => {
+  const navigate = useNavigate()
   const [products, setProducts] = useState<Product[]>([])
 
   useEffect(() => {
@@ -25,6 +27,14 @@ const App = () => {
     }
     getProducts()
   }, [])
+
+  const handleAddProduct = (product: Product) => {
+    ;(async () => {
+      const data = await createProduct(product)
+      setProducts([...products, data])
+    })()
+    navigate('/admin')
+  }
   return (
     <>
       <Header />
@@ -39,7 +49,7 @@ const App = () => {
           <Route path='/admin'>
             {/* {(role = 'admin')} */}
             <Route index element={<Dashboard products={products} />} />
-            <Route path='/admin/add' element={<ProductAdd />} />
+            <Route path='/admin/add' element={<ProductAdd onAdd={handleAddProduct} />} />
           </Route>
           <Route path='*' element={<NotFound />} />
         </Routes>
