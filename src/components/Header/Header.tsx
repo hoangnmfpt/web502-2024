@@ -27,6 +27,11 @@ const Header: React.FC = () => {
 							Register
 						</NavLink>
 					</li>
+					<li>
+						<NavLink className={style.itemLink} to="/admin">
+							AdminPage
+						</NavLink>
+					</li>
 				</ul>
 			</nav>
 		</header>

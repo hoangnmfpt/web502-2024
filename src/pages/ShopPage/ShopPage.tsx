@@ -1,25 +1,17 @@
-import { useEffect, useState } from 'react';
-import instance from '~/apis';
-import { TProduct } from '~/interfaces/Product';
-import style from './ProductList.module.scss';
 import { Link } from 'react-router-dom';
-
-const ProductList = () => {
-	const [products, setProducts] = useState<TProduct[]>([]);
-
-	useEffect(() => {
-		const fetchProducts = async () => {
-			const { data } = await instance.get(`/products`);
-			setProducts(data);
-		};
-		fetchProducts();
-	}, []);
+import style from './ShopPage.module.scss';
+import React from 'react';
+import { TProduct } from '~/interfaces/Product';
+type Props = {
+	products: TProduct[];
+};
+const Shop: React.FC<Props> = ({ products }) => {
 	return (
 		<div>
 			<h1>Danh sách sản phẩm bán chạy</h1>
 			<div className="row">
 				{products.map((item) => (
-					<div className="col-4">
+					<div className="col-4" key={item.id}>
 						<div className={style.productCart} key={item.id}>
 							<Link to={`/shop/${item.id}`}>
 								<h3 className="card-title">{item.title}</h3>
@@ -37,4 +29,4 @@ const ProductList = () => {
 	);
 };
 
-export default ProductList;
+export default Shop;
