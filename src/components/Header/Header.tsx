@@ -9,11 +9,6 @@ const Header = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink to="/shop" className={style["nav-link"]}>
-          Shop
-        </NavLink>
-      </li>
-      <li>
         <NavLink to="/login" className={style["nav-link"]}>
           Login
         </NavLink>
@@ -21,6 +16,11 @@ const Header = () => {
       <li>
         <NavLink to="/register" className={style["nav-link"]}>
           Register
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="/admin" className={style["nav-link"]}>
+          Admin page
         </NavLink>
       </li>
     </ul>
