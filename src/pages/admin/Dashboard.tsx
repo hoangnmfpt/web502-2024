@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { TProduct } from "~/interfaces/Product";
 
@@ -26,8 +25,8 @@ const Dashboard = ({ products }: Props) => {
         </thead>
         <tbody>
           {products.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
+            <tr key={item._id}>
+              <td>{item._id}</td>
               <td>{item.title}</td>
               <td>{item.price}</td>
               <td>
