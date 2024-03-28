@@ -90,3 +90,7 @@ button:hover {
   width: 100px;
   max-width: calc(100% / 5);
 }
+
+table {
+  text-align: center;
+}

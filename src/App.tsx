@@ -11,6 +11,7 @@ import Notfound from "./pages/Notfound";
 import ProductDetail from "./pages/ProductDetail";
 import Register from "./pages/Register";
 import Dashboard from "./pages/admin/Dashboard";
+import ProductAdd from "./pages/admin/ProductAdd";
 
 function App() {
   const [products, setProducts] = useState<TProduct[]>([]);
@@ -41,7 +42,8 @@ function App() {
 
             {/* Admin */}
             <Route path="/admin">
-              <Route index element={<Dashboard />} />
+              <Route index element={<Dashboard products={products} />} />
+              <Route path="/admin/add" element={<ProductAdd />} />
             </Route>
 
             <Route path="*" element={<Notfound />} />
