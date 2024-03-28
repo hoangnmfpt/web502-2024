@@ -20,16 +20,23 @@ const ProductDetail = () => {
   return (
     <div>
       <h1>Chi tiet san pham</h1>
-      <div>
-        <h2>{product?.title}</h2>
-        <p>Gia: {product?.price}</p>
-        <p>{product?.description}</p>
-        <img src={product?.thumbnail} alt={product?.title} />
-        <div className="imagesList">
-          {product?.images &&
-            product.images.map((item) => {
-              return <img width={100} src={item} />;
-            })}
+      <div className="product">
+        <div className="row">
+          <div className="col">
+            <img src={product?.thumbnail} alt={product?.title} />
+            <div className="imagesList">
+              {product?.images &&
+                product.images.map((item) => {
+                  return <img className="img-item" src={item} />;
+                })}
+            </div>
+          </div>
+          <div className="col">
+            <h2>{product?.title}</h2>
+            <p>Gia: {product?.price}</p>
+            <p>{product?.description}</p>
+            <button className="btn btn-primary w-100">Add to card</button>
+          </div>
         </div>
       </div>
     </div>
